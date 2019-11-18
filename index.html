@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>CSS Doors</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="filler"></div>
+    <div class="filler">
+        <h2>CSS Doors</h2>
+        <h4>Fiddling with functioning CSS doors to access page sections</h4>
+    </div>
     <div class="section">
-        <div class="text-content">Hellooo Thereeee</div>
+        <div class="text-content">Hellooooo Thereeee</div>
         <!-- Autocomplete: firefox was remembering previous choice of radio button, so if was most recently open, on reload it would still be open -->
         <input type="radio" name="doorOne" id="openDoorOne" autocomplete="off">
         <input type="radio" name="doorOne" id="closeDoorOne" autocomplete="off">
         <div class="container">
-                <label class="unlock" for="openDoorOne">OPEN</label>
+                <label class="unlock" for="openDoorOne">Open</label>
             <div class="scene scene--left">
                 <div class="bg"></div>
                 <label class="door door--outer lock" for="closeDoorOne">CLOSE</label>

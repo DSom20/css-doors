@@ -9,13 +9,15 @@
     box-sizing: border-box;
 }
 
-html, body, button {
+html, body, button, h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
 }
 
 .filler {
-    height: 50px;
+    min-height: 50px;
+    text-align: center;
+    background-color: whitesmoke
 }
 
 .section {
@@ -80,6 +82,13 @@ html, body, button {
     grid-area: door--outer;
     border: var(--border);
     z-index: 30;
+    cursor: pointer;
+    /* Text */
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .door--inner {
@@ -123,11 +132,19 @@ input {
     top: calc(50% - 40px);
     left: calc(50% - 32px);
     background: silver;
+    cursor: pointer;
     z-index: 11;
+    /* Transition */
+    visibility: visible;
+    transition: visibility 0s calc(var(--outer-door-time) + var(--inner-door-time)), transform var(--button-time) ease-out calc(var(--outer-door-time) + var(--inner-door-time));
+    /* Text */
     display: flex;
     justify-content: center;
     align-items: center;
+    font-variant: petite-caps;
 }
+
+/* Transitions on Click/Checked */
 
 #openDoorOne:checked ~ .container .scene--left {
     margin-right: calc(100% - 128px);
@@ -153,22 +170,7 @@ input {
     transition: transform var(--button-time) ease-in, visibility 0s var(--button-time);
 }
 
-.unlock {
-    visibility: visible;
-    transition: visibility 0s calc(var(--outer-door-time) + var(--inner-door-time)), transform var(--button-time) ease-out calc(var(--outer-door-time) + var(--inner-door-time));
-}
-
-/* Text On Doors */
-
-.door--outer {
-    writing-mode: vertical-lr;
-    text-orientation: upright;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Edge:
+/* Microsoft Edge:
     Edge transitions don't accept calc() !!!!!!
         Not in the transition property itself OR in the property to/from which it is transitioning
             Eg: margin-right: calc(100% - 128px);
